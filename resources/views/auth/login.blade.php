@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title') {{trans('auth.login')}} -@endsection
+{{-- @section('title') {{trans('auth.login')}} -@endsection --}}
 
 @section('content')
-  <div class="jumbotron home m-0 bg-gradient">
+    {{-- <div class="jumbotron home m-0 bg-gradient">
     <div class="container pt-lg-md">
       <div class="row">
         <div class="col-lg-7">
@@ -27,7 +27,7 @@
 
               @include('errors.errors-forms')
 
-              @if($settings->facebook_login == 'on' || $settings->google_login == 'on' || $settings->twitter_login == 'on')
+              @if ($settings->facebook_login == 'on' || $settings->google_login == 'on' || $settings->twitter_login == 'on')
               <div class="mb-2 w-100">
 
                 @if ($settings->facebook_login == 'on')
@@ -49,14 +49,14 @@
                 @endif
                 </div>
 
-                @if (! $settings->disable_login_register_email)
+                @if (!$settings->disable_login_register_email)
                   <small class="btn-block text-center my-3 text-uppercase or">{{__('general.or')}}</small>
                 @endif
 
               @endif
 
 
-              @if (! $settings->disable_login_register_email)
+              @if (!$settings->disable_login_register_email)
 
               <form method="POST" action="{{ route('login') }}" id="formLoginRegister" enctype="multipart/form-data">
                   @csrf
@@ -129,5 +129,69 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> --}}
+
+    <div class="main" style="background-image: url(assets/images/inner-banner.jpg);">
+        {{-- <?php include 'includes/header.php'; ?> --}}
+        <div class="mainBanner innerPageBanner">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="sign_form">
+                            <div class="album_sec_head">
+                                <h5>Sign Up</h5>
+                                <p>It's quick and easy.</p>
+                            </div>
+                            <div class="row">
+                                <form action="{{route('register')}}" method="POST">
+                                    @csrf
+                                    {{-- @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            <ul>
+                                                @foreach ($errors->all() as $error)
+                                                    <li>{{ $error }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </div>
+                                    @endif --}}
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="First Name" name="firstname">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="text" placeholder="Last Name" name="lastname">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input type="text" placeholder="Mobile Number / Email Address" name="email">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input type="password" placeholder="Password" name="password">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input type="password" placeholder="re-type Password" name="confirm-password">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit">Register</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="sign_form">
+                            <div class="album_sec_head">
+                                <h5>Sign In</h5>
+                                <p>It's quick and easy.</p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12"><input type="text" placeholder="Mobile Number / Email Address">
+                                </div>
+                                <div class="col-md-12"><input type="password" placeholder="Password"></div>
+                                <div class="col-md-12"><button>Login</button></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

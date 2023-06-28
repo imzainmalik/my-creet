@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
@@ -15,11 +15,11 @@
 
   @include('includes.css_general')
 
-  @if ($settings->status_pwa)
+  {{-- @if ($settings->status_pwa)
     @laravelPWA
-  @endif
+  @endif --}}
 
-  @yield('css')
+  {{-- @yield('css')
 
  @if($settings->google_analytics != '')
   {!! $settings->google_analytics !!}
@@ -154,4 +154,36 @@
   <div id="bodyContainer"></div>
 @endauth
 </body>
+</html> --}} 
+
+@include('../includes/compatibility')
+<title>{{ config('app.name', 'Laravel') }}</title>
+<meta name="description" content="">
+@include('../includes/style')
+<meta charset='utf-8' />
+</head>
+
+<body>
+
+    {{-- <div class="container-fluid"> --}}
+    <!-- Begin page -->
+    {{-- <div id="layout-wrapper"> --}}
+
+    @include('../includes/header')
+    {{-- @include('../includes/sidebar') --}}
+
+    @yield('content')
+    {{-- @include('../includes/testimonials') --}}
+    @include('../includes/footer')
+
+    {{-- </div> --}}
+    <!-- END layout-wrapper -->
+
+    {{-- </div> --}}
+    @include('../includes/scripts')
+    {{-- @stack('custom_script') --}}
+
+
+</body>
+
 </html>

@@ -50,13 +50,14 @@ class LoginController extends Controller
      */
     public function showLoginForm()
     {
-      $settings = AdminSettings::first();
+      // $settings = AdminSettings::first();
 
-  		if ($settings->home_style == 0)	{
-  			return view('auth.login');
-  		} else {
-  			return redirect('/');
-  		}
+  		// if ($settings->home_style == 0)	{
+  		// 	return view('auth.login');
+  		// } else {
+  		// 	return redirect('/');
+  		// }
+      return view('auth.login');
     }
 
     public function login(Request $request)

@@ -149,6 +149,7 @@ class RegisterController extends Controller
      */
     public function register(Request $request)
     {
+      // dd($request->all());
         $validator = $this->validator($request->all());
         $isModal   = $request->input('isModal');
 

@@ -2,7 +2,7 @@
 
 @section('content')
   <!-- jumbotron -->
-  <div class="jumbotron homepage m-0 bg-gradient">
+  {{-- <div class="jumbotron homepage m-0 bg-gradient">
     <div class="container">
       <div class="row">
         <div class="col-lg-5 second">
@@ -209,7 +209,172 @@
         </a>
         </p>
       </div>
-    </div>
+    </div> --}}
+
+    <div class="main" style="background-image: url(assets/images/banner.png);">
+      <div id="particles-js"></div>  
+       {{-- <?php include("includes/header.php"); ?>	 --}}
+       <div class="mainBanner">
+         <div class="container">
+           <div class="banner_cont">
+             <a href="signup-login.php"><h5>Join Create Your Own:</h5></a>
+             <p>Album, Village, Community, City, Country, State/Region.  Country, Continent, World</p>
+           </div>
+           <div class="row">
+             <div class="col-md-3">
+               <div class="left_ad adsWrp">
+                 <img src="assets/images/ads-cover.png" alt="">
+                 <h6>Eddie's City, USA </h6>
+               </div>
+             </div>
+             <div class="col-md-9">
+               <div class="member_wrapper">
+                 <div class="memberCont member01">
+                   <a href="coming-soon.php">
+                     <img src="assets/images/06.png" alt="">
+                       <div style="background-image:url(assets/images/member-bg.png)">
+                       <h6>Country</h6>
+                       <span>2k Followers</span>
+                       </div>
+                   </a>
+                 </div>
+                 <div class="memberCont member02">
+                   <a href="eddies-city.php">
+                     <img src="assets/images/eddie.png" alt="">
+                       <div style="background-image:url(assets/images/member-bg.png)">
+                       <h6>Eddie City Owner</h6>
+                       <span>1k residents 2k Followers</span>
+                       </div>
+                   </a>
+                 </div>
+                 <div class="memberCont member03">
+                   <a href="coming-soon.php">
+                     <img src="assets/images/03.png" alt="">
+                       <div style="background-image:url(assets/images/member-bg.png)">
+                       <h6>County/Subregions</h6>
+                       <span>800 Followers</span>
+                       </div>
+                   </a>
+                 </div>
+                 <div class="memberCont member04">
+                   <a href="coming-soon.php">
+                     <img src="assets/images/04.png" alt="">
+                       <div style="background-image:url(assets/images/member-bg.png)">
+                       <h6>Village</h6>
+                       <span>2k Followers</span>
+                       </div>
+                   </a>
+                 </div>
+                 <div class="memberCont member05">
+                   <a href="coming-soon.php">
+                     <img src="assets/images/05.png" alt="">
+                       <div style="background-image:url(assets/images/member-bg.png)">
+                       <h6>State</h6>
+                       <span>2k Followers</span>
+                       </div>
+                   </a>
+                 </div>
+                 <div class="memberCont member06">
+                   <a href="social-album.php">
+                     <img src="assets/images/01.png" alt="">
+                       <div style="background-image:url(assets/images/member-bg.png)">
+                       <h6>Abi Album</h6>
+                       <span>500 Followers</span>
+                       </div>
+                   </a>
+                 </div>
+                 <div class="memberCont member07">
+                   <a href="coming-soon.php">
+                     <img src="assets/images/07.png" alt="">
+                       <div style="background-image:url(assets/images/member-bg.png)">
+                       <h6>Continent</h6>
+                       <span>2k Followers</span>
+                       </div>
+                   </a>
+                 </div>
+                 <div class="memberCont member08">
+                   <a href="social-album.php">
+                     <img src="assets/images/08.png" alt="">
+                       <div style="background-image:url(assets/images/member-bg.png)">
+                       <h6>World</h6>
+                       <span>2k Followers</span>
+                       </div>
+                   </a>
+                 </div>
+                 <div class="memberCont member09">
+                   <a href="coming-soon.php">
+                     <img src="assets/images/09.png" alt="">
+                       <div style="background-image:url(assets/images/member-bg.png)">
+                       <h6>Community</h6>
+                       <span>2k Followers</span>
+                       </div>
+                   </a>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="careerWrapper">
+             <div class="row">
+               <!-- <div class="col-md-4">
+                 <div class="newsWrapper" style="background-image: url(assets/images/career-bg.png);">
+                   <h5><span>MyCreet bulletin board</span></h5>
+                   <ul>
+                     <li>
+                       <a href="social-album.php">
+                         <div class="sLogo"><img src="assets/images/s-logo.png" alt=""></div>
+                         <div>
+                           <p>Lorem ipsum dolor sit amet consectetur.  Praesent aliquam sed in in sed fringilla risus</p>
+                           <span>Posted: 22 April 2023</span>
+                         </div>
+                       </a>
+                     </li>
+                     <li>
+                       <a href="social-album.php">
+                         <div class="sLogo"><img src="assets/images/s-logo.png" alt=""></div>
+                         <div>
+                           <p>Lorem ipsum dolor sit amet consectetur.  Praesent aliquam sed in in sed fringilla risus</p>
+                           <span>Posted: 22 April 2023</span>
+                         </div>
+                       </a>
+                     </li>
+                   </ul>
+                 </div>
+               </div> -->
+               <div class="col-md-6">
+                 <div class="center_ad adsWrp">
+                   <h6>most popular owner by category</h6>
+                 </div>
+               </div>
+               <div class="col-md-6 d-flex justify-content-end">
+                 <div class="newsWrapper" style="background-image: url(assets/images/career-bg.png);">
+                   <h5><span>MyCreet news</span></h5>
+                   <ul>
+                     <li>
+                       <a href="contact.php">
+                         <div class="sLogo"><img src="assets/images/s-logo.png" alt=""></div>
+                         <div>
+                           <p>What is MyCreet? A platform that allows people around the world. Create their own</p>
+                           <!-- <span>Posted: 22 April 2023</span> -->
+                         </div>
+                       </a>
+                     </li>
+                     <li>
+                       <a href="contact.php">
+                         <div class="sLogo"><img src="assets/images/s-logo.png" alt=""></div>
+                         <div>
+                           <p>Want to know how? Contact us info@mycreat.com for detail how we can help you create you own MyCreet connects from the deepest part of jungle to most advance city of worl</p>
+                           <!-- <span>Posted: 22 April 2023</span> -->
+                         </div>
+                       </a>
+                     </li>
+                   </ul>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
 
 @endsection
 
