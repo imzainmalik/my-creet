@@ -54,7 +54,7 @@ use App\Http\Controllers\UploadMediaStoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 /*
  |-----------------------------------
  | Index

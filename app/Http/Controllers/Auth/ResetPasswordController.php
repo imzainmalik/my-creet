@@ -33,40 +33,40 @@ class ResetPasswordController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-      	$this->subject = trans('passwords.subject'); //add this line
-        $this->middleware('guest');
-    }
+    // public function __construct()
+    // {
+    //   	$this->subject = trans('passwords.subject'); //add this line
+    //     $this->middleware('guest');
+    // }
 
-    /**
-     * Get the password reset validation rules.
-     *
-     * @return array
-     */
-    protected function rules()
-    {
-      $settings = AdminSettings::first();
-      $catpcha = $settings->captcha == 'on' ? 'required|captcha' : 'required_if:_null,==,0' ;
+    // /**
+    //  * Get the password reset validation rules.
+    //  *
+    //  * @return array
+    //  */
+    // protected function rules()
+    // {
+    //   $settings = AdminSettings::first();
+    //   $catpcha = $settings->captcha == 'on' ? 'required|captcha' : 'required_if:_null,==,0' ;
 
-        return [
-            'token' => 'required',
-            'email' => 'required|email',
-            'password' => 'required|confirmed|min:8',
-            'g-recaptcha-response' => $catpcha
-        ];
-    }
+    //     return [
+    //         'token' => 'required',
+    //         'email' => 'required|email',
+    //         'password' => 'required|confirmed|min:8',
+    //         'g-recaptcha-response' => $catpcha
+    //     ];
+    // }
 
-    /**
-     * Get the password reset validation error messages.
-     *
-     * @return array
-     */
-    protected function validationErrorMessages()
-    {
-        return [
-          'g-recaptcha-response.required' => trans('admin.captcha_error_required'),
-          'g-recaptcha-response.captcha' => trans('admin.captcha_error'),
-        ];
-    }
+    // /**
+    //  * Get the password reset validation error messages.
+    //  *
+    //  * @return array
+    //  */
+    // protected function validationErrorMessages()
+    // {
+    //     return [
+    //       'g-recaptcha-response.required' => trans('admin.captcha_error_required'),
+    //       'g-recaptcha-response.captcha' => trans('admin.captcha_error'),
+    //     ];
+    // }
 }
