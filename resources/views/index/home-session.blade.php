@@ -39,15 +39,13 @@
               <span aria-hidden="true">
                 <i class="bi bi-x-lg"></i>
               </span>
-            </button>
-
+            </button> 
             <h4 class="alert-heading"><i class="bi bi-megaphone mr-2"></i> {{ trans('general.announcements') }}</h4>
             <p class="update-text">
               {!! $settings->announcement !!}
             </p>
           </div><!-- end announcements -->
-        @endif
-
+        @endif 
           @if (auth()->user()->payPerView()->count() != 0)
             <div class="col-md-12 d-none">
               <ul class="list-inline">

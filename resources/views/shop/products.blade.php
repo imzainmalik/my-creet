@@ -70,13 +70,11 @@
                   @if ($categories->count())
                     <select class="ml-2 custom-select mb-2 mb-lg-0 w-auto filter">
                         <option @if (! request()->get('cat')) selected @endif value="{{url('shop')}}">{{trans('general.all_categories')}}</option>
-
                           @foreach ($categories as $category)
                             <option @if (request()->get('cat') == $category->slug) selected @endif value="{{url("shop?cat=$category->slug")}}">
                               {{ Lang::has('shop-categories.' . $category->slug) ? __('shop-categories.' . $category->slug) : $category->name }}
                             </option>
                           @endforeach
-
                       </select>
                   @endif
               </span>
