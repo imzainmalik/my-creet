@@ -4,13 +4,13 @@
     'name' => 'MyCreet',
     'env' => 'local',
     'debug' => true,
-    'url' => 'http://127.0.0.1:8000',
+    'url' => 'http://localhost',
     'asset_url' => NULL,
     'timezone' => 'UTC',
     'locale' => 'en',
     'fallback_locale' => 'en',
     'faker_locale' => 'en_US',
-    'key' => 'base64:qC83KJXtmmG0SyNORxw/UtpJPYXF5DNpoDmV827FjaI=',
+    'key' => 'base64:c6pgo0pds8KkZDcUZQHVET9atZVRGJrSlPD7rFWImV8=',
     'cipher' => 'AES-256-CBC',
     'providers' => 
     array (
@@ -219,7 +219,7 @@
       'file' => 
       array (
         'driver' => 'file',
-        'path' => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\storage\\framework/cache/data',
+        'path' => 'D:\\Tahir\\Projects\\my-creet\\storage\\framework/cache/data',
       ),
       'memcached' => 
       array (
@@ -306,7 +306,7 @@
       array (
         'driver' => 'mysql',
         'url' => NULL,
-        'host' => 'localhost',
+        'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'mycreet',
         'username' => 'root',
@@ -326,7 +326,7 @@
       array (
         'driver' => 'pgsql',
         'url' => NULL,
-        'host' => 'localhost',
+        'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'mycreet',
         'username' => 'root',
@@ -341,7 +341,7 @@
       array (
         'driver' => 'sqlsrv',
         'url' => NULL,
-        'host' => 'localhost',
+        'host' => '127.0.0.1',
         'port' => '3306',
         'database' => 'mycreet',
         'username' => 'root',
@@ -380,27 +380,27 @@
   ),
   'filesystems' => 
   array (
-    'default' => 'default',
+    'default' => 'local',
     'cloud' => 's3',
     'disks' => 
     array (
       'local' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\storage\\app',
+        'root' => 'D:\\Tahir\\Projects\\my-creet\\storage\\app',
       ),
       'public' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\storage\\app/public',
-        'url' => 'http://127.0.0.1:8000/storage',
+        'root' => 'D:\\Tahir\\Projects\\my-creet\\storage\\app/public',
+        'url' => 'http://localhost/storage',
         'visibility' => 'public',
       ),
       'default' => 
       array (
         'driver' => 'local',
-        'root' => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\public',
-        'url' => 'http://127.0.0.1:8000/public',
+        'root' => 'D:\\Tahir\\Projects\\my-creet\\public',
+        'url' => 'http://localhost/public',
         'visibility' => 'public',
       ),
       's3' => 
@@ -416,51 +416,51 @@
       'dospace' => 
       array (
         'driver' => 's3',
-        'key' => '',
-        'secret' => '',
-        'region' => '',
-        'bucket' => '',
+        'key' => NULL,
+        'secret' => NULL,
+        'region' => NULL,
+        'bucket' => NULL,
         'visibility' => 'public',
         'endpoint' => 'https://.digitaloceanspaces.com',
       ),
       'wasabi' => 
       array (
         'driver' => 's3',
-        'key' => '',
-        'secret' => '',
-        'region' => '',
-        'bucket' => '',
+        'key' => NULL,
+        'secret' => NULL,
+        'region' => NULL,
+        'bucket' => NULL,
         'visibility' => 'public',
         'endpoint' => 'https://s3..wasabisys.com',
       ),
       'backblaze' => 
       array (
         'driver' => 'b2',
-        'accountId' => '',
-        'applicationKey' => '',
-        'bucketName' => '',
-        'bucketId' => '',
+        'accountId' => NULL,
+        'applicationKey' => NULL,
+        'bucketName' => NULL,
+        'bucketId' => NULL,
       ),
       'vultr' => 
       array (
         'driver' => 's3',
-        'key' => '',
-        'secret' => '',
-        'region' => '',
-        'bucket' => '',
+        'key' => NULL,
+        'secret' => NULL,
+        'region' => NULL,
+        'bucket' => NULL,
         'visibility' => 'public',
-        'endpoint' => 'https://ewr1.vultrobjects.com',
+        'endpoint' => NULL,
       ),
     ),
     'links' => 
     array (
-      'C:\\Users\\zain.malik\\Downloads\\mycreet\\public\\storage' => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\storage\\app/public',
+      'D:\\Tahir\\Projects\\my-creet\\public\\storage' => 'D:\\Tahir\\Projects\\my-creet\\storage\\app/public',
     ),
   ),
   'flutterwave' => 
   array (
-    'publicKey' => '',
-    'secretKey' => '',
+    'publicKey' => NULL,
+    'secretKey' => NULL,
     'secretHash' => '',
   ),
   'hashing' => 
@@ -495,15 +495,15 @@
     'timeout' => 3600,
     'enable_logging' => true,
     'set_command_and_error_output_on_exception' => false,
-    'temporary_files_root' => 'C:\\Users\\ZAIN~1.MAL\\AppData\\Local\\Temp',
+    'temporary_files_root' => 'C:\\Users\\TAHIR~1.SAL\\AppData\\Local\\Temp',
   ),
   'laravelpwa' => 
   array (
     'name' => 'LaravelPWA',
     'manifest' => 
     array (
-      'name' => 'Sponzy',
-      'short_name' => 'Sponzy',
+      'name' => NULL,
+      'short_name' => NULL,
       'start_url' => '/',
       'background_color' => '#ffffff',
       'theme_color' => '#000000',
@@ -514,51 +514,51 @@
       array (
         '72x72' => 
         array (
-          'path' => 'images/icons/icon-72x72.png',
+          'path' => NULL,
           'purpose' => 'any',
         ),
         '96x96' => 
         array (
-          'path' => 'images/icons/icon-96x96.png',
+          'path' => NULL,
           'purpose' => 'any',
         ),
         '128x128' => 
         array (
-          'path' => 'images/icons/icon-128x128.png',
+          'path' => NULL,
           'purpose' => 'any',
         ),
         '144x144' => 
         array (
-          'path' => 'images/icons/icon-144x144.png',
+          'path' => NULL,
           'purpose' => 'any',
         ),
         '152x152' => 
         array (
-          'path' => 'images/icons/icon-152x152.png',
+          'path' => NULL,
           'purpose' => 'any',
         ),
         '384x384' => 
         array (
-          'path' => 'images/icons/icon-384x384.png',
+          'path' => NULL,
           'purpose' => 'any',
         ),
         '512x512' => 
         array (
-          'path' => 'images/icons/icon-512x512.png',
+          'path' => NULL,
           'purpose' => 'any',
         ),
       ),
       'splash' => 
       array (
-        '640x1136' => 'images/icons/splash-640x1136.png',
-        '750x1334' => 'images/icons/splash-750x1334.png',
-        '828x1792' => 'images/icons/splash-828x1792.png',
-        '1125x2436' => 'images/icons/splash-1125x2436.png',
-        '1242x2208' => 'images/icons/splash-1242x2208.png',
-        '1242x2688' => 'images/icons/splash-1242x2688.png',
-        '1536x2048' => 'images/icons/splash-1536x2048.png',
-        '1668x2224' => 'images/icons/splash-1668x2224.png',
-        '2048x2732' => 'images/icons/splash-2048x2732.png',
+        '640x1136' => NULL,
+        '750x1334' => NULL,
+        '828x1792' => NULL,
+        '1125x2436' => NULL,
+        '1242x2208' => NULL,
+        '1242x2688' => NULL,
+        '1536x2048' => NULL,
+        '1668x2224' => NULL,
+        '2048x2732' => NULL,
       ),
       'shortcuts' => 
       array (
@@ -570,7 +570,7 @@
   ),
   'logging' => 
   array (
-    'default' => 'single',
+    'default' => 'stack',
     'channels' => 
     array (
       'stack' => 
@@ -585,13 +585,13 @@
       'single' => 
       array (
         'driver' => 'single',
-        'path' => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\storage\\logs/laravel.log',
+        'path' => 'D:\\Tahir\\Projects\\my-creet\\storage\\logs/laravel.log',
         'level' => 'debug',
       ),
       'daily' => 
       array (
         'driver' => 'daily',
-        'path' => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\storage\\logs/laravel.log',
+        'path' => 'D:\\Tahir\\Projects\\my-creet\\storage\\logs/laravel.log',
         'level' => 'debug',
         'days' => 14,
       ),
@@ -601,7 +601,7 @@
         'url' => NULL,
         'username' => 'Laravel Log',
         'emoji' => ':boom:',
-        'level' => 'critical',
+        'level' => 'debug',
       ),
       'papertrail' => 
       array (
@@ -641,23 +641,23 @@
       ),
       'emergency' => 
       array (
-        'path' => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\storage\\logs/laravel.log',
+        'path' => 'D:\\Tahir\\Projects\\my-creet\\storage\\logs/laravel.log',
       ),
     ),
   ),
   'mail' => 
   array (
-    'default' => 'sendmail',
+    'default' => 'smtp',
     'mailers' => 
     array (
       'smtp' => 
       array (
         'transport' => 'smtp',
-        'host' => 'smtp.mailtrap.io',
-        'port' => '2525',
-        'encryption' => '',
-        'username' => '',
-        'password' => '',
+        'host' => 'mailhog',
+        'port' => '1025',
+        'encryption' => NULL,
+        'username' => NULL,
+        'password' => NULL,
         'timeout' => NULL,
         'auth_mode' => NULL,
       ),
@@ -690,7 +690,7 @@
     ),
     'from' => 
     array (
-      'address' => 'admin@admin.com',
+      'address' => NULL,
       'name' => 'MyCreet',
     ),
     'markdown' => 
@@ -698,7 +698,7 @@
       'theme' => 'default',
       'paths' => 
       array (
-        0 => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\resources\\views/vendor/mail',
+        0 => 'D:\\Tahir\\Projects\\my-creet\\resources\\views/vendor/mail',
       ),
     ),
   ),
@@ -740,7 +740,7 @@
   ),
   'queue' => 
   array (
-    'default' => 'database',
+    'default' => 'sync',
     'connections' => 
     array (
       'sync' => 
@@ -792,13 +792,13 @@
   array (
     'mailgun' => 
     array (
-      'domain' => '',
-      'secret' => '',
+      'domain' => NULL,
+      'secret' => NULL,
       'endpoint' => 'api.mailgun.net',
     ),
     'postmark' => 
     array (
-      'token' => '',
+      'token' => NULL,
     ),
     'ses' => 
     array (
@@ -809,26 +809,26 @@
     'stripe' => 
     array (
       'model' => 'App\\Models\\User',
-      'key' => '',
-      'secret' => '',
+      'key' => NULL,
+      'secret' => NULL,
     ),
     'facebook' => 
     array (
-      'client_id' => '',
-      'client_secret' => '',
-      'redirect' => 'http://127.0.0.1:8000/oauth/facebook/callback',
+      'client_id' => NULL,
+      'client_secret' => NULL,
+      'redirect' => 'http://localhost/oauth/facebook/callback',
     ),
     'google' => 
     array (
-      'client_id' => '',
-      'client_secret' => '',
-      'redirect' => 'http://127.0.0.1:8000/oauth/google/callback',
+      'client_id' => NULL,
+      'client_secret' => NULL,
+      'redirect' => 'http://localhost/oauth/google/callback',
     ),
     'twitter' => 
     array (
-      'client_id' => '',
-      'client_secret' => '',
-      'redirect' => 'http://127.0.0.1:8000/oauth/twitter/callback',
+      'client_id' => NULL,
+      'client_secret' => NULL,
+      'redirect' => 'http://localhost/oauth/twitter/callback',
     ),
   ),
   'session' => 
@@ -837,7 +837,7 @@
     'lifetime' => '120',
     'expire_on_close' => false,
     'encrypt' => false,
-    'files' => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\storage\\framework/sessions',
+    'files' => 'D:\\Tahir\\Projects\\my-creet\\storage\\framework/sessions',
     'connection' => NULL,
     'table' => 'sessions',
     'store' => NULL,
@@ -857,9 +857,9 @@
   array (
     'paths' => 
     array (
-      0 => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\resources\\views',
+      0 => 'D:\\Tahir\\Projects\\my-creet\\resources\\views',
     ),
-    'compiled' => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\storage\\framework\\views',
+    'compiled' => 'D:\\Tahir\\Projects\\my-creet\\storage\\framework\\views',
   ),
   'flare' => 
   array (
@@ -903,17 +903,17 @@
   ),
   'cashier' => 
   array (
-    'key' => '',
-    'secret' => '',
+    'key' => NULL,
+    'secret' => NULL,
     'path' => 'stripe',
     'webhook' => 
     array (
-      'secret' => '',
+      'secret' => NULL,
       'tolerance' => 300,
     ),
     'currency' => 'usd',
     'currency_locale' => 'en',
-    'payment_notification' => 'App\\Notifications\\ConfirmPayment',
+    'payment_notification' => NULL,
     'invoices' => 
     array (
       'renderer' => 'Laravel\\Cashier\\Invoices\\DompdfInvoiceRenderer',
@@ -926,13 +926,13 @@
   ),
   'captcha' => 
   array (
-    'siteKey' => '',
-    'secretKey' => '',
+    'siteKey' => NULL,
+    'secretKey' => NULL,
     'options' => 
     array (
-      'hideBadge' => true,
-      'dataBadge' => 'bottomleft',
-      'timeout' => '5',
+      'hideBadge' => false,
+      'dataBadge' => 'bottomright',
+      'timeout' => 5,
       'debug' => false,
     ),
   ),
@@ -946,8 +946,8 @@
     'route' => NULL,
     'paths' => 
     array (
-      0 => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\public\\upload',
-      1 => 'C:\\Users\\zain.malik\\Downloads\\mycreet\\public\\images',
+      0 => 'D:\\Tahir\\Projects\\my-creet\\public\\upload',
+      1 => 'D:\\Tahir\\Projects\\my-creet\\public\\images',
     ),
     'templates' => 
     array (

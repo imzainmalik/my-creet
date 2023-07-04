@@ -60,96 +60,99 @@ class UserController extends Controller
 	 */
   public function dashboard()
   {
-    if (auth()->user()->verified_id != 'yes') {
-      abort(404);
-    }
-
-    $earningNetUser = auth()->user()->myPaymentsReceived()->sum('earning_net_user');
-    $earningNetSubscriptions = auth()->user()->myPaymentsReceived()->whereType('subscription')->sum('earning_net_user');
-    $earningNetTips = auth()->user()->myPaymentsReceived()->whereType('tip')->sum('earning_net_user');
-    $earningNetPPV = auth()->user()->myPaymentsReceived()->whereType('ppv')->sum('earning_net_user');
-    $subscriptionsActive = auth()->user()->totalSubscriptionsActive();
-
-    $month = date('m');
-    $year = date('Y');
-    $daysMonth = Helper::daysInMonth($month, $year);
-    $dateFormat = "$year-$month-";
-
-    $monthFormat  = trans("months.$month");
-    $currencySymbol = $this->settings->currency_symbol;
-
-    for ($i=1; $i <= $daysMonth; ++$i) {
-      $date = date('Y-m-d', strtotime($dateFormat.$i));
-      $_subscriptions = auth()->user()->myPaymentsReceived()->whereDate('created_at', '=', $date)->sum('earning_net_user');
-      $monthsData[] =  "'$monthFormat $i'";
-      $_earningNetUser = $_subscriptions;
-      $earningNetUserSum[] = $_earningNetUser;
-    }
-
-		// Today
-		$stat_revenue_today = Transactions::where('created_at', '>=', date('Y-m-d H:i:s', strtotime('today')))
-		->whereApproved('1')
-    ->whereSubscribed(auth()->id())
-		 ->sum('earning_net_user');
-
-     // Yesterday
- 		$stat_revenue_yesterday = Transactions::where('created_at', '>=', Carbon::yesterday())
-    ->where('created_at', '<', date('Y-m-d H:i:s', strtotime('today')))
- 		->whereApproved('1')
-     ->whereSubscribed(auth()->id())
- 		 ->sum('earning_net_user');
-
-		 // Week
-	 	$stat_revenue_week = Transactions::whereBetween('created_at', [
-	        Carbon::parse()->startOfWeek(),
-	        Carbon::parse()->endOfWeek(),
-	    ])->whereApproved('1')
+    if (Auth::check()) {
+      if (auth()->user()->verified_id != 'yes') {
+        abort(404);
+      }
+  
+      $earningNetUser = auth()->user()->myPaymentsReceived()->sum('earning_net_user');
+      $earningNetSubscriptions = auth()->user()->myPaymentsReceived()->whereType('subscription')->sum('earning_net_user');
+      $earningNetTips = auth()->user()->myPaymentsReceived()->whereType('tip')->sum('earning_net_user');
+      $earningNetPPV = auth()->user()->myPaymentsReceived()->whereType('ppv')->sum('earning_net_user');
+      $subscriptionsActive = auth()->user()->totalSubscriptionsActive();
+  
+      $month = date('m');
+      $year = date('Y');
+      $daysMonth = Helper::daysInMonth($month, $year);
+      $dateFormat = "$year-$month-";
+  
+      $monthFormat  = trans("months.$month");
+      $currencySymbol = $this->settings->currency_symbol;
+  
+      for ($i=1; $i <= $daysMonth; ++$i) {
+        $date = date('Y-m-d', strtotime($dateFormat.$i));
+        $_subscriptions = auth()->user()->myPaymentsReceived()->whereDate('created_at', '=', $date)->sum('earning_net_user');
+        $monthsData[] =  "'$monthFormat $i'";
+        $_earningNetUser = $_subscriptions;
+        $earningNetUserSum[] = $_earningNetUser;
+      }
+  
+      // Today
+      $stat_revenue_today = Transactions::where('created_at', '>=', date('Y-m-d H:i:s', strtotime('today')))
+      ->whereApproved('1')
       ->whereSubscribed(auth()->id())
-	 	 ->sum('earning_net_user');
-
-     // Last Week
-	 	$stat_revenue_last_week = Transactions::whereBetween('created_at', [
-	        Carbon::now()->startOfWeek()->subWeek(),
-	        Carbon::now()->subWeek()->endOfWeek(),
-	    ])->whereApproved('1')
-      ->whereSubscribed(auth()->id())
-	 	 ->sum('earning_net_user');
-
-		 // Month
-	 	$stat_revenue_month = Transactions::whereBetween('created_at', [
-	        Carbon::parse()->startOfMonth(),
-	        Carbon::parse()->endOfMonth(),
-	    ])->whereApproved('1')
-      ->whereSubscribed(auth()->id())
-			->sum('earning_net_user');
-
-      // Last Month
- 	 	$stat_revenue_last_month = Transactions::whereBetween('created_at', [
- 	        Carbon::now()->startOfMonth()->subMonth(),
- 	        Carbon::now()->subMonth()->endOfMonth(),
- 	    ])->whereApproved('1')
+       ->sum('earning_net_user');
+  
+       // Yesterday
+       $stat_revenue_yesterday = Transactions::where('created_at', '>=', Carbon::yesterday())
+      ->where('created_at', '<', date('Y-m-d H:i:s', strtotime('today')))
+       ->whereApproved('1')
        ->whereSubscribed(auth()->id())
- 			->sum('earning_net_user');
-
-    $label = implode(',', $monthsData);
-    $data = implode(',', $earningNetUserSum);
-
-    return view('users.dashboard', [
-          'earningNetUser' => $earningNetUser,
-          'earningNetSubscriptions' => $earningNetSubscriptions,
-          'earningNetTips' => $earningNetTips,
-          'earningNetPPV' => $earningNetPPV,
-          'subscriptionsActive' => $subscriptionsActive,
-          'label' => $label,
-          'data' => $data,
-          'month' => $monthFormat,
-          'stat_revenue_today' => $stat_revenue_today,
-          'stat_revenue_yesterday' => $stat_revenue_yesterday,
-    			'stat_revenue_week' => $stat_revenue_week,
-          'stat_revenue_last_week' => $stat_revenue_last_week,
-    			'stat_revenue_month' => $stat_revenue_month,
-          'stat_revenue_last_month' => $stat_revenue_last_month 
-        ]);
+        ->sum('earning_net_user');
+  
+       // Week
+       $stat_revenue_week = Transactions::whereBetween('created_at', [
+            Carbon::parse()->startOfWeek(),
+            Carbon::parse()->endOfWeek(),
+        ])->whereApproved('1')
+        ->whereSubscribed(auth()->id())
+        ->sum('earning_net_user');
+  
+       // Last Week
+       $stat_revenue_last_week = Transactions::whereBetween('created_at', [
+            Carbon::now()->startOfWeek()->subWeek(),
+            Carbon::now()->subWeek()->endOfWeek(),
+        ])->whereApproved('1')
+        ->whereSubscribed(auth()->id())
+        ->sum('earning_net_user');
+  
+       // Month
+       $stat_revenue_month = Transactions::whereBetween('created_at', [
+            Carbon::parse()->startOfMonth(),
+            Carbon::parse()->endOfMonth(),
+        ])->whereApproved('1')
+        ->whereSubscribed(auth()->id())
+        ->sum('earning_net_user');
+  
+        // Last Month
+        $stat_revenue_last_month = Transactions::whereBetween('created_at', [
+             Carbon::now()->startOfMonth()->subMonth(),
+             Carbon::now()->subMonth()->endOfMonth(),
+         ])->whereApproved('1')
+         ->whereSubscribed(auth()->id())
+         ->sum('earning_net_user');
+  
+      $label = implode(',', $monthsData);
+      $data = implode(',', $earningNetUserSum);
+  
+      return view('users.dashboard', [
+            'earningNetUser' => $earningNetUser,
+            'earningNetSubscriptions' => $earningNetSubscriptions,
+            'earningNetTips' => $earningNetTips,
+            'earningNetPPV' => $earningNetPPV,
+            'subscriptionsActive' => $subscriptionsActive,
+            'label' => $label,
+            'data' => $data,
+            'month' => $monthFormat,
+            'stat_revenue_today' => $stat_revenue_today,
+            'stat_revenue_yesterday' => $stat_revenue_yesterday,
+            'stat_revenue_week' => $stat_revenue_week,
+            'stat_revenue_last_week' => $stat_revenue_last_week,
+            'stat_revenue_month' => $stat_revenue_month,
+            'stat_revenue_last_month' => $stat_revenue_last_month 
+          ]);
+    }
+    return redirect("login")->withSuccess('Opps! You do not have access');
   }
 
   public function profile($slug, $media = null)

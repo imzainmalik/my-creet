@@ -1,4 +1,4 @@
-<!-- FOOTER -->
+{{-- <!-- FOOTER -->
 <div class="py-5 @auth d-none d-lg-block @endauth @if (Auth::check() && auth()->user()->dark_mode == 'off' || Auth::guest() ) footer_background_color footer_text_color @else bg-white @endif @if (Auth::check() && auth()->user()->dark_mode == 'off' && $settings->footer_background_color == '#ffffff' || Auth::guest() && $settings->footer_background_color == '#ffffff' ) border-top @endif">
 <footer class="container">
   <div class="row">
@@ -194,4 +194,20 @@
       </div>
     </div>
   </div>
+</footer> --}}
+
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="widget"></div>
+			</div>
+			<div class="col-md-4">
+				<div class="widget"></div>
+			</div>
+			<div class="col-md-4">
+				<div class="widget"></div>
+			</div>
+		</div>
+	</div>
 </footer>

@@ -54,7 +54,7 @@ use App\Http\Controllers\UploadMediaStoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes();
 /*
  |-----------------------------------
  | Index
@@ -67,13 +67,13 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 // });
 
 // Authentication Routes.
-Route::get('login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::get('signup-login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('login', [LoginController::class, 'login']);
 Route::get('logout', [LoginController::class, 'logout']);
 
 // Registration Routes.
-Route::get('signup', [RegisterController::class, 'showRegistrationForm'])->name('register');
-Route::post('signup', [RegisterController::class, 'register']);
+// Route::get('signup', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('signup', [RegisterController::class, 'register'])->name('register');
 
 // Password Reset Routes.
 Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
